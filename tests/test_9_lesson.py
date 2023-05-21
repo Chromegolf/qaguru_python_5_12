@@ -19,7 +19,7 @@ def test_student_registration_form():
         .set_state_and_city('Haryana', 'Karnal')
     )
     reg_page.submit()
-    ##test
+    ##test_
     '''
         reg_page.open()
         reg_page.set_user_info('Ivan', 'Ivanov')
