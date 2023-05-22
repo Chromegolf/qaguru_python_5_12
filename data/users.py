@@ -13,6 +13,7 @@ class Gender(Enum):
 class Subject(Enum):
     computer_science = 'Computer Science'
     english = 'English'
+    civics = 'Civics'
 
 
 class Hobby(Enum):
