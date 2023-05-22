@@ -89,7 +89,7 @@ class RegistrationPage:
         self.set_gender(user.gender)
         self.set_date(user.birthday.strftime("%Y"),
                       user.birthday.strftime("%B"),
-                      user.birthday.strftime("%-d"))
+                      user.birthday.strftime("%d").lstrip('0'))
         self.set_subjects(user.subjects)
         self.set_hobbies(user.hobbies)
         self.set_picture(user.upload_picture)
