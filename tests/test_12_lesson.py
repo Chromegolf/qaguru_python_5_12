@@ -1,7 +1,11 @@
 from data.users import User, Gender, Subject, Hobby
 from package.registration_page import RegistrationPage
 from datetime import date
+from utils import attach
 import allure
+from selene import browser
+
+
 
 def test_student_registration_form():
     #GIVEN_
@@ -35,3 +39,9 @@ def test_student_registration_form():
     #THEN
     with allure.step("Проверяем соответствие заполненных данных переданным"):
         reg_page.should_registered_user(student)
+
+    attach.add_html(browser)
+    attach.add_logs(browser)
+    attach.add_screenshot(browser)
+    attach.add_video(browser)
+
