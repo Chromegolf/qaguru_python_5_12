@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 
 from utils import attach
 
+PROJECT_ROOT_PATH = os.path.dirname(__file__)
+RESOURCE_PATH = os.path.abspath(os.path.join(PROJECT_ROOT_PATH, '..', 'resources'))
 DEFAULT_BROWSER_VERSION = "100.0"
 
 
@@ -42,7 +44,7 @@ def setup_browser(request):
     password = os.getenv('PASSWORD')
 
     driver = webdriver.Remote(
-        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options
     )
     browser = Browser(Config(driver))
