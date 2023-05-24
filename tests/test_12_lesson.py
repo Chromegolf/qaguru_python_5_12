@@ -1,6 +1,7 @@
 from data.users import User, Gender, Subject, Hobby
 from package.registration_page import RegistrationPage
 from datetime import date
+import allure
 
 def test_student_registration_form():
     #GIVEN
@@ -20,11 +21,17 @@ def test_student_registration_form():
     )
 
     reg_page = RegistrationPage()
-    reg_page.open()
+
+    with allure.step("Открываем страницу регистрации"):
+        reg_page.open()
 
     #WHEN
-    reg_page.register(student)
-    reg_page.submit()
+    with allure.step("Заполняем данные студента"):
+        reg_page.register(student)
+
+    with allure.step("Сохраняем данные студента"):
+        reg_page.submit()
 
     #THEN
-    reg_page.should_registered_user(student)
+    with allure.step("Проверяем соответствие заполненных данных переданным"):
+        reg_page.should_registered_user(student)
