@@ -1,3 +1,4 @@
 .idea
 allure
-tests/allure_results
+tests/lite/allure_results
+tests/hard/allure_results
