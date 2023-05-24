@@ -4,7 +4,7 @@ from datetime import date
 import allure
 
 def test_student_registration_form():
-    #GIVEN
+    #GIVEN_
     student = User(
         first_name='Ivan',
         last_name='Ivanov',
